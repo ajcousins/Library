@@ -1,27 +1,52 @@
+
+
+.My-Color-Theme-1-hex { color: #F6F0EC; }
+.My-Color-Theme-2-hex { color: #E3DDCA; }
+.My-Color-Theme-3-hex { color: #FFA333; }
+.My-Color-Theme-4-hex { color: #3A808A; }
+.My-Color-Theme-5-hex { color: #284D5B; }
+
+
 body {
     margin: 0px;
     padding-left: 10px;
     padding-right: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #284D5B;
 }
 h1 {
     margin: 0px;
+    font-size: 20pt;
 }
 h2 {
     margin: 10px 10px 0px 10px;
     position: static;
     display: inline-block;
+    font-size: 14pt;
+    font-weight: 600;
+    color: #F6F0EC;
 }
 
 h3 {
     margin: 10px 10px 0px 10px;
     position: static;
     display: inline-block;
+    font-size: 8pt;
+    font-weight: 300;
+    color: #E3DDCA;
+    
 }
 
+br {
+    height: 2px;
+}
 p {
-    margin: 10px 10px 0px 10px;
+    margin: 0px 10px 0px 10px;
     position: static;
-    display: inline-block;
+    
+    font-size: 8pt;
+    font-weight: 300;
+    color: #E3DDCA;
 }
 
 
@@ -35,8 +60,9 @@ input {
 }
 
 .appBody {
-    
+    /*
     background-color: aqua;
+    */
     max-width: 1500px;
     min-width: 300px;
     
@@ -47,33 +73,48 @@ input {
 }
 
 .book {
-    background-color: rgb(240, 187, 187);
+    background-color: #3A808A;
     border-radius: 5px;
     display: inline-block;
     width: 280px;
-    height: 200px;
+    height: 150px;
     vertical-align:top; /* Prevents text pushing down entire div*/
     text-align: left;
     position: relative;
     margin: 5px 5px 10px;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.5);
+}
+
+.book:hover {
+    top:1px;
+    background-color: #33717a;
 
 }
 
 .ghostBook {
     background-color: transparent;
-    border-color: rgb(240, 187, 187);
+    border-color: #F6F0EC;
     border-style: dashed;
     border-width: 2px;
-    color: white;
+    color: #F6F0EC;
     cursor: pointer;
     font-size: 50pt;
     font-weight: 700;
-    height: 136px;
+    height: 121px;
     width: 276px;
-    padding-top: 60px;
+    padding-top: 25px;
     text-align: center;
     user-select: none;
+    box-shadow: 0px 0px rgba(0,0,0,0);
 
+}
+
+
+.ghostBook:hover {
+    top:0px;
+    color: #FFA333;
+    border-color: #FFA333;
+    background-color: transparent;
 }
 
 .modal-bg {
@@ -99,7 +140,7 @@ input {
 
 .modal {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: white;
+    background-color: #F6F0EC;
     border-radius: 20px;
     height: 50%;
     width: 40%;
@@ -145,6 +186,15 @@ input {
 	top:1px;
 }
 
+.remove {
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+}
+.remove:hover {
+    color: #FFA333;
+}
+
 
 @media only screen and (max-width: 700px) {
   
@@ -161,7 +211,7 @@ input {
     }
 
     .modal {
-        background-color: white;
+        background-color: #284D5B;
         border-radius: 0px;
         height: 100%;
         width: 100%;
@@ -169,7 +219,7 @@ input {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        
+        color: #F6F0EC;
     
     }
 
