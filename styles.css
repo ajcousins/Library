@@ -1,0 +1,176 @@
+body {
+    margin: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+h1 {
+    margin: 0px;
+}
+h2 {
+    margin: 10px 10px 0px 10px;
+    position: static;
+    display: inline-block;
+}
+
+h3 {
+    margin: 10px 10px 0px 10px;
+    position: static;
+    display: inline-block;
+}
+
+p {
+    margin: 10px 10px 0px 10px;
+    position: static;
+    display: inline-block;
+}
+
+
+td {
+    padding: 5px;
+}
+
+input {
+    padding: 5px;
+    margin: 8px;
+}
+
+.appBody {
+    
+    background-color: aqua;
+    max-width: 1500px;
+    min-width: 300px;
+    
+    margin: 20px auto auto;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.book {
+    background-color: rgb(240, 187, 187);
+    border-radius: 5px;
+    display: inline-block;
+    width: 280px;
+    height: 200px;
+    vertical-align:top; /* Prevents text pushing down entire div*/
+    text-align: left;
+    position: relative;
+    margin: 5px 5px 10px;
+
+}
+
+.ghostBook {
+    background-color: transparent;
+    border-color: rgb(240, 187, 187);
+    border-style: dashed;
+    border-width: 2px;
+    color: white;
+    cursor: pointer;
+    font-size: 50pt;
+    font-weight: 700;
+    height: 136px;
+    width: 276px;
+    padding-top: 60px;
+    text-align: center;
+    user-select: none;
+
+}
+
+.modal-bg {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: white;
+    border-radius: 20px;
+    height: 50%;
+    width: 40%;
+    min-height: 380px;
+    min-width: 305px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+
+.modal-close {
+    font-family: Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+
+.submitButton {
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.submitButton:hover {
+	background-color:#eb675e;
+}
+.submitButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  
+    .modal-bg {
+        background-color: rgba(0,0,0,0.5);
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .modal {
+        background-color: white;
+        border-radius: 0px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        
+    
+    }
+
+  }

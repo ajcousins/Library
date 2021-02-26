@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Library</title>
+</head>
+<body>
+  <div class="appBody">
+    <h1>Library</h1>
+    <div class="libraryBody">
+      
+      <!--
+      <div class="book">
+        <h2>Lord of the Flies</h2>
+        <h3> William Golding</h3>
+      </div>
+      -->
+
+
+    </div>
+  </div>
+
+  <div class="modal-bg">
+    <div class="modal">
+
+        <h4>Enter book details</h4>
+        <table>
+          <tr>
+            <td>
+              <label for="title">Title: </label>
+            </td>
+            <td>
+              <input type="text" name="title" autocomplete="off">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="author">Author: </label>
+            </td>
+            <td>
+              <input type="text" name="author" autocomplete="off">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="pages">Pages: </label>
+            </td>
+            <td>
+              <input type="number" name="pages" min="0">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            <td>
+              <label for="read">Read</label>
+              <input type="radio" name="read">
+              <label for="read">Not read</label>
+              <input type="radio" name="read">
+            </td>
+          </tr>
+
+        </table>
+        <br>
+        <button class="submitButton">Submit</button>
+        <span class="modal-close">X</span>
+
+    </div>
+  </div>
+
+
+<script src = "script.js"></script>
+</body>
+</html>
