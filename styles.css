@@ -86,7 +86,6 @@ input {
 }
 
 .book:hover {
-    top:1px;
     background-color: #33717a;
 
 }
@@ -140,7 +139,8 @@ input {
 
 .modal {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: #F6F0EC;
+    background-color: #3A808A;
+    color: white;
     border-radius: 20px;
     height: 50%;
     width: 40%;
@@ -165,8 +165,8 @@ input {
 
 
 .submitButton {
-	box-shadow:inset 0px 39px 0px -24px #e67a73;
-	background-color:#e4685d;
+	box-shadow:inset 0px 39px 0px -24px #ffb860;
+	background-color:#FFA333;
 	border-radius:4px;
 	border:1px solid #ffffff;
 	display:inline-block;
@@ -176,23 +176,27 @@ input {
 	font-size:15px;
 	padding:6px 15px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #b23e35;
+	text-shadow:0px 1px 0px #a86819;
 }
 .submitButton:hover {
-	background-color:#eb675e;
+	background-color:#FFA333;
 }
 .submitButton:active {
 	position:relative;
 	top:1px;
 }
 
-.remove {
+.link {
     position: absolute;
     bottom: 10px;
     cursor: pointer;
 }
-.remove:hover {
+.link:hover {
     color: #FFA333;
+}
+
+.remove {
+    right: 5px;
 }
 
 

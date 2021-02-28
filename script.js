@@ -15,14 +15,13 @@ const ghostBook = document.createElement("div")
             modalBg.classList.remove("bg-active");
         })
 
-
 submitButton.addEventListener("click", function () {
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let pages = Number(document.querySelector("#pages").value);
     let isRead = document.querySelector("#readTrue").checked;
     addBookToLibrary(title, author, pages, isRead);
-    // Reset fields
+    // Reset modal fields
     document.querySelector("#title").value = "";
     document.querySelector("#author").value = "";
     document.querySelector("#pages").value = "";
@@ -31,14 +30,27 @@ submitButton.addEventListener("click", function () {
     modalBg.classList.remove("bg-active");
 });
 
-//console.log(appBody);
-
 // Constructor function
 function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
+}
+
+Book.prototype.removeBook = function (index) {
+    console.log("remove", index);
+    myLibrary.splice(index, 1);
+    refreshDisplay();
+}
+
+Book.prototype.changeRead = function (index) {
+    if (myLibrary[index].isRead === true) {
+        myLibrary[index].isRead = false;
+    } else {
+        myLibrary[index].isRead = true;
+    }
+    refreshDisplay();
 }
 
 // Filler/ sample books:
@@ -49,36 +61,27 @@ myLibrary.push(new Book ("1984 Nineteen Eighty-Four", "George Orwell", 384, true
 myLibrary.push(new Book ("A Brief History of Time", "Stephen Hawking", 242, true));
 
 function addBookToLibrary (title, author, pages, isRead) {
-    /*
-    let title = prompt("Title?");
-    let author = prompt("Author");
-    let pages = prompt("Pages");
-    let isRead = prompt("Read?");
-    */
     myLibrary.push(new Book (title, author, pages, isRead));
-    //console.log(myLibrary.length);
-    updateLibraryDisplay(myLibrary.length - 1);
-    
+    appendToLibraryDisplay(myLibrary.length - 1);
 }
 
-//addBookToLibrary();
-
-//console.log(myLibrary);
-
+// Refresh library display
+function refreshDisplay() {
+    while (document.querySelector(".book")) {
+        appBody.removeChild(document.querySelector(".book"));
+    }
+    displayLibrary();
+}
 
 // Populate lbrary function
 function displayLibrary () {
     for (let i = 0; i < myLibrary.length; i++) {
-        
         createBook(i);
     }
-    
     appBody.appendChild(ghostBook);
-
-    console.log(myLibrary.length);
 }
 
-function updateLibraryDisplay (index) {
+function appendToLibraryDisplay (index) {
     appBody.removeChild(ghostBook);
     createBook(index);
     appBody.appendChild(ghostBook);
@@ -103,11 +106,28 @@ function createBook (index) {
         pages.textContent = `Pages: ${myLibrary[index].pages}`;
         book.appendChild(pages);
 
+        let read = document.createElement("p")
+        read.setAttribute("class", "link");
+        read.setAttribute("id", `read_${index}`);
+        read.addEventListener("click", function () {
+            myLibrary[index].changeRead(index)
+        });
+        if (myLibrary[index].isRead === true) {
+            read.textContent = "Read";
+        } else {
+            read.textContent = "Not read";
+        }
+        
+        book.appendChild(read);
+
         let remove = document.createElement("p")
-        remove.setAttribute("class", "remove");
-        remove.textContent = "Remove?";
+        remove.setAttribute("class", "link remove");
+        remove.setAttribute("id", `index_${index}`);
+        remove.addEventListener("click", function () {
+            myLibrary[index].removeBook(index)
+        });
+        remove.textContent = "Remove Title?";
         book.appendChild(remove);
 }
-
 
 displayLibrary();
