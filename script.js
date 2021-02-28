@@ -39,7 +39,6 @@ function Book(title, author, pages, isRead) {
 }
 
 Book.prototype.removeBook = function (index) {
-    console.log("remove", index);
     myLibrary.splice(index, 1);
     refreshDisplay();
 }
