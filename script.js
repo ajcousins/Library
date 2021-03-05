@@ -31,25 +31,27 @@ submitButton.addEventListener("click", function () {
 });
 
 // Constructor function
-function Book(title, author, pages, isRead) {
+class Book {
+    constructor (title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
-}
-
-Book.prototype.removeBook = function (index) {
-    myLibrary.splice(index, 1);
-    refreshDisplay();
-}
-
-Book.prototype.changeRead = function (index) {
-    if (myLibrary[index].isRead === true) {
-        myLibrary[index].isRead = false;
-    } else {
-        myLibrary[index].isRead = true;
     }
-    refreshDisplay();
+
+    removeBook (index) {
+        myLibrary.splice(index, 1);
+        refreshDisplay();
+    }
+
+    changeRead (index) {
+        if (myLibrary[index].isRead === true) {
+            myLibrary[index].isRead = false;
+        } else {
+            myLibrary[index].isRead = true;
+        }
+        refreshDisplay();
+    }
 }
 
 // Filler/ sample books:
